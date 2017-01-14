@@ -7,7 +7,7 @@ in terminal type
 
 2) setting up core package.json
 in terminal type
-	grunt init
+	npm init
 	// follow intructions
 
 3)It will generate package.json file in folder
