@@ -44,7 +44,15 @@ Dependencies will get added in package.json
 											'html/css/main.css' : ['html/css/content.css' , 'html/css/sidebar.css']
 										}
 									}
-								}
+								},
+								
+							/*	ugligy :
+									{
+									...	..
+									...
+									
+									}   */
+									
 								});
 
 								//Load the plugin
