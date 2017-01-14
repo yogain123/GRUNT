@@ -1,0 +1,69 @@
+install npm (node package Manager)  // using this u can download buncj of this from internet
+
+//installing grunt-cli
+1) go to the project folder
+in terminal type
+	npm install -g grunt-cli
+
+2) setting up core package.json
+in terminal type
+	grunt init
+	// follow intructions
+
+3)It will generate package.json file in folder
+
+4)Install GRUNT itself
+in terminal type
+	npm intall grunt --save-dev      //add dependencies
+
+4)Intalling plugins (let say cssmin and ugligy)
+in terminal type
+	npm install grunt-contrib-cssmin --save-dev    // for cssmin
+	npm install grunt-contrib-uglify --save-min    // for uglify
+
+Dependencies will get added in package.json
+
+5)Make a file Gruntfile.js     // to run grunt
+
+								Gruntfile.js
+								------------
+								module.exports = function(grunt){
+								
+								//configure main project setting
+								grunt.initConfig({
+
+								//basic setting and info about our plugins
+								pkg: grunt.file.readJSON('package.json'),
+
+								//name of plugin without grunt-config
+
+								cssmin : {
+
+									combine : {
+										files : {
+											'html/css/main.css' : ['html/css/content.css' , 'html/css/sidebar.css']
+										}
+									}
+								}
+								});
+
+								//Load the plugin
+								grunt.loadNpmTasks('grunt-contrib-cssmin');
+								grunt.loadNpmTasks('grunt-contrib-uglify');    //adding uglify as well 
+
+								//do the task
+
+								grunt.registerTask('default', ['cssmin','uglify']);    // Registering task
+
+								};
+
+
+"main.css" is resulted file , and "content.css" and "sidebas.css" is the one which we minified
+
+6)In Terminal type
+		grunt
+
+
+AS a result File Created,, go and check main.css
+
+Visit http://gruntjs.com/plugins   for all grunt plugins
